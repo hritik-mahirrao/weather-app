@@ -1,0 +1,22 @@
+@import "../../index.scss";
+
+header {
+  background-color: gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  height: 50px;
+
+  .menu-container {
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

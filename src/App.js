@@ -1,23 +1,27 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+// Components
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Body from "./components/Body";
+
+// Style
+import "./App.scss";
 
 function App() {
+  const menuConfig = [
+    { label: "Home", link: "/" },
+    { label: "About", link: "/about" },
+    { label: "Contact", link: "/contact" },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Test Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header menuConfig={menuConfig} />
+        <Body />
+        <Footer />
+      </Router>
     </div>
   );
 }
